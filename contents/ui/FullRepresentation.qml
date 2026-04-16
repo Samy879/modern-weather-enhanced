@@ -20,10 +20,10 @@ ColumnLayout {
     readonly property bool detailsVisible: root.showApparentTemp || root.showHumidity || root.showUVIndex || root.showWind
 
     // --- DIMENSIONS DYNAMIQUES ---
-    readonly property int fixedWidth: root.textweather ? Kirigami.Units.gridUnit * 15 : Kirigami.Units.gridUnit * 22
+    readonly property int fixedWidth: Kirigami.Units.gridUnit * 15;
 
     readonly property int calculatedHeight: {
-        let base = root.textweather ? Kirigami.Units.gridUnit * 13 : Kirigami.Units.gridUnit * 18;
+        let base = Kirigami.Units.gridUnit * 13;
         return detailsVisible ? base : (base - Kirigami.Units.gridUnit * 2.5);
     }
 
