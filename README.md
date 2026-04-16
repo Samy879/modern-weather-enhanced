@@ -4,7 +4,10 @@ A highly customizable, multilingual, and minimalist weather widget for KDE Plasm
 
 This project is an enhanced version of the original [Minimal Chaac Weather](https://github.com/zayronxio/Chaac.Minimal.Weather).
 
-![Aperçu du widget en français](https://images.pling.com/img/00/00/85/25/71/2356087/5.png)
+<p align="center">
+  <img src="https://images.pling.com/img/00/00/85/25/71/2356087/5.png" width="45%" />
+  <img src="https://images.pling.com/img/00/00/85/25/71/2356087/31.png" width="45%" />
+</p>
 
 ## ✨ Features
 - **Modern UI**: Clean, airy design inspired by Plasma 6 aesthetics.
