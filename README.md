@@ -26,8 +26,9 @@ Option 1: Direct (KDE Interface)
 Option 2: Local Installation (Manual)
 
    1. Download the `.plasmoid` file from the **Files** tab or via this [Direct Download Link](https://github.com/samy879/modern-weather-enhanced/releases/latest/download/modern-weather-enhanced.plasmoid).
-   2. Open your terminal and run: kpackagetool6 --type Plasma/Applet --install modern-weather-enhanced.plasmoid
-   3. Or, in the Add Widgets menu, click the menu button and select Install from Local File...
+   2. Open your terminal and run:
+```bash kpackagetool6 --type Plasma/Applet --install modern-weather-enhanced.plasmoid```
+   4. Or, in the Add Widgets menu, click the menu button and select Install from Local File...
 
 ## 🤝 Credits
 Original work by [zayronxio](https://github.com/zayronxio). 
