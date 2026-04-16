@@ -8,8 +8,9 @@ This project is an enhanced version of the original [Minimal Chaac Weather](http
   <img src="https://images.pling.com/img/00/00/85/25/71/2356087/5.png" width="31%" />
   <img src="https://images.pling.com/img/00/00/85/25/71/2356087/31.png" width="31%" />
   <img src="https://images.pling.com/img/00/00/85/25/71/2356087/41.png" width="31%" />
-</p>
+</p><br>
 
+  
 ## ✨ Features
 - **Modern UI**: Clean, airy design inspired by Plasma 6 aesthetics.
 - **Custom Refresh Timer**: You decide how often the weather updates.
@@ -27,8 +28,13 @@ Option 2: Local Installation (Manual)
 
    1. Download the `.plasmoid` file from the **Files** tab or via this [Direct Download Link](https://github.com/samy879/modern-weather-enhanced/releases/latest/download/modern-weather-enhanced.plasmoid).
    2. Open your terminal and run:
-```bash kpackagetool6 --type Plasma/Applet --install modern-weather-enhanced.plasmoid```
-   4. Or, in the Add Widgets menu, click the menu button and select Install from Local File...
+```bash
+kpackagetool6 --type Plasma/Applet --install modern-weather-enhanced.plasmoid
+```
+   3. Or, in the Add Widgets menu, click the menu button and select Install from Local File...
+
+## 🌟 Support the Project
+Feedback and feature requests are always welcome! If you find this widget useful, please consider starring the repository on GitHub or leaving a rating on [Opendesktop](https://www.opendesktop.org/p/2356087/). Your support and suggestions help keep the project alive and improving!
 
 ## 🤝 Credits
 Original work by [zayronxio](https://github.com/zayronxio). 
