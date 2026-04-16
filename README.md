@@ -1,6 +1,6 @@
 # Modern Weather Enhanced 🌦️
 
-A highly customizable and minimalist weather widget for KDE Plasma 6, focused on clarity and modern design. 
+A highly customizable, multilingual, and minimalist weather widget for KDE Plasma 6, focused on clarity and modern design.
 
 This project is an enhanced version of the original [Minimal Chaac Weather](https://github.com/zayronxio/Chaac.Minimal.Weather).
 
@@ -11,10 +11,17 @@ This project is an enhanced version of the original [Minimal Chaac Weather](http
 - **Detailed Info**: Quick access to "Feels like", Humidity, UV Index, and Wind speed.
 
 ## 🛠️ Installation
-1. Download the `.plasmoid` file from the [KDE Store](https://www.opendesktop.org/p/2356087).
-2. Open your Plasma terminal and run:
-   `plasmapkg2 -i modern-weather-enhanced.plasmoid`
-3. (Or simply use the "Add Widgets" interface in KDE).
+Option 1: Direct (KDE Interface)
+
+   1. Right-click your desktop and select Add Widgets.
+   2. Click Get New Widgets > Download New Plasma Widgets.
+   3. Search for Modern Weather Enhanced and click Install.
+
+Option 2: Local Installation (Manual)
+
+   1. Download the .plasmoid file (from the Files tab or the URL below).
+   2. Open your terminal and run: kpackagetool6 --type Plasma/Applet --install modern-weather-enhanced.plasmoid
+   3. Or, in the Add Widgets menu, click the menu button and select Install from Local File...
 
 ## 🤝 Credits
 Original work by [zayronxio](https://github.com/zayronxio). 
