@@ -11,7 +11,7 @@ This project is an enhanced version of the original [Minimal Chaac Weather](http
 - **Detailed Info**: Quick access to "Feels like", Humidity, UV Index, and Wind speed.
 
 ## 🛠️ Installation
-1. Download the `.plasmoid` file from the [KDE Store]([LINK_HERE](https://www.opendesktop.org/p/2356087)).
+1. Download the `.plasmoid` file from the [KDE Store](https://www.opendesktop.org/p/2356087).
 2. Open your Plasma terminal and run:
    `plasmapkg2 -i modern-weather-enhanced.plasmoid`
 3. (Or simply use the "Add Widgets" interface in KDE).
