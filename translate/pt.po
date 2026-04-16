@@ -1,0 +1,118 @@
+# Translation of Minimal.Chaac in Portuguese
+# Copyright (C) 2023
+# This file is distributed under the same license as the  Nori.Weather package.
+# Adolfo Silerio <adolfo@example.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nori.Weather\n"
+"Report-Msgid-Bugs-To: https://store.kde.org/p/2179833/\n"
+"POT-Creation-Date: 2023-05-01 16:59-0300\n"
+"PO-Revision-Date: 2025-06-24 10:00-0600\n"
+"Last-Translator: Adolfo Silerio <adolfo@example.com>\n"
+"Language-Team: Portuguese <LL@li.org>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../contents/ui/components/WeatherData.qml
+msgid "Clear"
+msgstr "Limpo"
+
+#: ../contents/ui/components/WeatherData.qml
+msgid "Cloudy"
+msgstr "Nublado"
+
+#: ../contents/ui/components/WeatherData.qml
+msgid "Drizzle"
+msgstr "Garoa"
+
+#: ../contents/ui/components/WeatherData.qml
+msgid "Rain"
+msgstr "Chuva"
+
+#: ../contents/ui/components/WeatherData.qml
+msgid "Snow"
+msgstr "Neve"
+
+#: ../contents/ui/components/WeatherData.qml
+msgid "Hail"
+msgstr "Granizo"
+
+#: ../contents/ui/components/WeatherData.qml
+msgid "Showers"
+msgstr "Aguaceiros"
+
+#: ../contents/ui/components/WeatherData.qml
+msgid "Storm"
+msgstr "Tempestade"
+
+msgid "Apparent Temp"
+msgstr "Sensação"
+
+msgid "Humidity"
+msgstr "Humidade"
+
+msgid "UV Index"
+msgstr "Índice UV"
+
+msgid "Wind"
+msgstr "Vento"
+
+msgid "General"
+msgstr "Geral"
+
+msgid "Automatic Location (IP):"
+msgstr "Localização automática (IP):"
+
+msgid "Latitude:"
+msgstr "Latitude:"
+
+msgid "Longitude:"
+msgstr "Longitude:"
+
+msgid "Temperature Unit:"
+msgstr "Unidade de temperatura:"
+
+msgid "Update Interval (min):"
+msgstr "Intervalo de atualização (min):"
+
+msgid "Show temperature:"
+msgstr "Mostrar temperatura:"
+
+msgid "Show condition text:"
+msgstr "Mostrar texto de condição:"
+
+msgid "Show decimals (only panel):"
+msgstr "Mostrar decimais (apenas painel):"
+
+msgid "Reverse Temp/Condition order:"
+msgstr "Inverter ordem Temp/Condição:"
+
+msgid "Temperature font size:"
+msgstr "Tamanho da fonte da temperatura:"
+
+msgid "Bold temperature:"
+msgstr "Temperatura em negrito:"
+
+msgid "Condition font size:"
+msgstr "Tamanho da fonte da condição:"
+
+msgid "Bold condition text:"
+msgstr "Texto de condição em negrito:"
+
+msgid "Use bold fonts everywhere:"
+msgstr "Usar fontes em negrito em todos os lugares:"
+
+msgid "Details to show:"
+msgstr "Detalhes a mostrar:"
+
+msgid "Apparent Temperature"
+msgstr "Temperatura aparente"
+
+msgid "Wind Speed"
+msgstr "Velocidade do vento"
+
+msgid "Forecast start day offset:"
+msgstr "Deslocamento do dia de início da previsão:"

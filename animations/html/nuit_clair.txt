@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root {
+    /* Fond "Bleu Crépuscule" très clair */
+    --bg-color: #dee4ed;
+    /* Étoiles : On utilise un bleu-gris sombre pour qu'elles soient visibles */
+    --star-color: rgba(70, 90, 120, 0.3);
+    /* Lune : Plus chaude et contrastée */
+    --moon-core: #fdf5d7;
+    --moon-halo: rgba(255, 230, 150, 0.4);
+    --text-main: #2e3136;
+  }
+
+  body {
+    background: #c0c0c0;
+    display: flex; justify-content: center; align-items: center;
+    height: 100vh; margin: 0;
+  }
+
+  .widget-preview {
+    position: relative;
+    width: 350px; height: 300px;
+    background: var(--bg-color);
+    border-radius: 16px;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  }
+
+  /* --- LA LUNE D'OR --- */
+  .moon-container {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    z-index: 1;
+  }
+
+  .moon-disk {
+    width: 45px;
+    height: 45px;
+    background: var(--moon-core);
+    border-radius: 50%;
+    filter: blur(1px);
+    /* Ombre portée douce pour la faire ressortir du fond clair */
+    box-shadow: 0 0 15px var(--moon-halo), 0 4px 10px rgba(0,0,0,0.05);
+    animation: moon-pulse 10s infinite alternate ease-in-out;
+  }
+
+  /* --- LES ÉTOILES SOMBRES (Scintillantes) --- */
+  .star-container {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .star {
+    position: absolute;
+    background: var(--star-color);
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle-dark var(--duration) infinite ease-in-out;
+  }
+
+  .star.small { width: 1.5px; height: 1.5px; }
+  .star.medium { width: 2.5px; height: 2.5px; filter: blur(0.5px); }
+
+  @keyframes twinkle-dark {
+    0%, 100% { opacity: 0.1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+
+  @keyframes moon-pulse {
+    from { transform: scale(1); opacity: 0.9; }
+    to { transform: scale(1.05); opacity: 1; }
+  }
+
+  /* --- INTERFACE --- */
+  .ui-content {
+    position: relative; z-index: 10;
+    color: var(--text-main); text-align: center; padding-top: 50px;
+  }
+  .temp { font-size: 72px; font-weight: 900; margin: 0; letter-spacing: -3px; }
+  .condition { font-size: 20px; opacity: 0.6; margin-top: -5px; }
+</style>
+</head>
+<body>
+
+<div class="widget-preview">
+  <div class="moon-container">
+    <div class="moon-disk"></div>
+  </div>
+
+  <div class="star-container">
+    <div class="star small" style="top: 15%; left: 10%; --duration: 4s;"></div>
+    <div class="star medium" style="top: 25%; left: 30%; --duration: 5s;"></div>
+    <div class="star small" style="top: 45%; left: 75%; --duration: 3s;"></div>
+    <div class="star small" style="top: 10%; left: 60%; --duration: 6s;"></div>
+    <div class="star medium" style="top: 65%; left: 20%; --duration: 4.5s;"></div>
+    <div class="star small" style="top: 80%; left: 85%; --duration: 5.5s;"></div>
+    <div class="star small" style="top: 35%; left: 50%; --duration: 3.5s;"></div>
+    <div class="star medium" style="top: 55%; left: 5%; --duration: 4.2s;"></div>
+  </div>
+
+  <div class="ui-content">
+    <p class="temp">14°C</p>
+    <p class="condition">Nuit Claire</p>
+  </div>
+</div>
+
+</body>
+</html>

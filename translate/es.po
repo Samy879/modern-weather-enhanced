@@ -1,0 +1,118 @@
+# Translation of smallweather in Spanish
+# Copyright (C) 2023
+# This file is distributed under the same license as the Nori.Weather package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Nori.Weather\n"
+"Report-Msgid-Bugs-To: https://store.kde.org/p/2179833/\n"
+"POT-Creation-Date: 2023-05-01 16:59-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Spanish <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../contents/ui/components/WeatherData.qml
+msgid "Clear"
+msgstr "Despejado"
+
+#: ../contents/ui/components/WeatherData.qml
+msgid "Cloudy"
+msgstr "Nublado"
+
+#: ../contents/ui/components/WeatherData.qml
+msgid "Drizzle"
+msgstr "Llovizna"
+
+#: ../contents/ui/components/WeatherData.qml
+msgid "Rain"
+msgstr "Lluvia"
+
+#: ../contents/ui/components/WeatherData.qml
+msgid "Snow"
+msgstr "Nieve"
+
+#: ../contents/ui/components/WeatherData.qml
+msgid "Hail"
+msgstr "Granizo"
+
+#: ../contents/ui/components/WeatherData.qml
+msgid "Showers"
+msgstr "Chubascos"
+
+#: ../contents/ui/components/WeatherData.qml
+msgid "Storm"
+msgstr "Tormenta"
+
+msgid "Apparent Temp"
+msgstr "Sensación"
+
+msgid "Humidity"
+msgstr "Humedad"
+
+msgid "UV Index"
+msgstr "Índice UV"
+
+msgid "Wind"
+msgstr "Viento"
+
+msgid "General"
+msgstr "General"
+
+msgid "Automatic Location (IP):"
+msgstr "Ubicación automática (IP):"
+
+msgid "Latitude:"
+msgstr "Latitud:"
+
+msgid "Longitude:"
+msgstr "Longitud:"
+
+msgid "Temperature Unit:"
+msgstr "Unidad de temperatura:"
+
+msgid "Update Interval (min):"
+msgstr "Intervalo de actualización (min):"
+
+msgid "Show temperature:"
+msgstr "Mostrar temperatura:"
+
+msgid "Show condition text:"
+msgstr "Mostrar texto de condición:"
+
+msgid "Show decimals (only panel):"
+msgstr "Mostrar decimales (solo panel):"
+
+msgid "Reverse Temp/Condition order:"
+msgstr "Invertir orden Temp/Condición:"
+
+msgid "Temperature font size:"
+msgstr "Tamaño de fuente de temperatura:"
+
+msgid "Bold temperature:"
+msgstr "Temperatura en negrita:"
+
+msgid "Condition font size:"
+msgstr "Tamaño de fuente de condición:"
+
+msgid "Bold condition text:"
+msgstr "Texto de condición en negrita:"
+
+msgid "Use bold fonts everywhere:"
+msgstr "Usar fuentes en negrita en todas partes:"
+
+msgid "Details to show:"
+msgstr "Detalles a mostrar:"
+
+msgid "Apparent Temperature"
+msgstr "Temperatura aparente"
+
+msgid "Wind Speed"
+msgstr "Velocidad del viento"
+
+msgid "Forecast start day offset:"
+msgstr "Desplazamiento del día de inicio del pronóstico:"

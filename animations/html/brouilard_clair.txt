@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root {
+    /* Thème CLAIR (Par défaut) */
+    --bg-color: #e2e8f0;
+    --fog-color: rgba(255, 255, 255, 0.8);
+    --fog-glow: rgba(255, 255, 255, 0.4);
+    --text-main: #2e3136;
+
+    /* Thème SOMBRE (Décommentez pour tester)
+    --bg-color: #0d0e17;
+    --fog-color: rgba(120, 135, 160, 0.4);
+    --fog-glow: rgba(100, 120, 150, 0.2);
+    --text-main: #ffffff;
+    */
+  }
+
+  body {
+    background: #c0c0c0;
+    display: flex; justify-content: center; align-items: center;
+    height: 100vh; margin: 0;
+  }
+
+  .widget-preview {
+    position: relative;
+    width: 350px; height: 300px;
+    background: var(--bg-color);
+    border-radius: 16px;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+
+  /* --- NAPPES DE BROUILLARD --- */
+  .fog-container {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .fog-layer {
+    position: absolute;
+    bottom: -50px;
+    left: -100px;
+    right: -100px;
+    height: 250px;
+    border-radius: 50%;
+    background: var(--fog-color);
+    filter: blur(60px); /* Flou massif pour l'aspect diffus */
+    animation: fog-breathe 12s infinite alternate ease-in-out;
+  }
+
+  .fog-depth {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--fog-glow) 0%, transparent 60%);
+    z-index: 2;
+  }
+
+  @keyframes fog-breathe {
+    0% { transform: translateY(0) scale(1); opacity: 0.6; }
+    100% { transform: translateY(-30px) scale(1.1); opacity: 0.9; }
+  }
+
+  /* --- INTERFACE --- */
+  .ui-content {
+    position: relative; z-index: 10;
+    color: var(--text-main); text-align: center; padding-top: 50px;
+  }
+  .temp { font-size: 72px; font-weight: 900; margin: 0; letter-spacing: -3px; }
+  .condition { font-size: 22px; font-weight: 500; opacity: 0.6; margin-top: -8px; }
+</style>
+</head>
+<body>
+
+<div class="widget-preview">
+  <div class="fog-depth"></div>
+
+  <div class="fog-container">
+    <div class="fog-layer" style="animation-delay: 0s; height: 200px;"></div>
+    <div class="fog-layer" style="animation-delay: -4s; height: 150px; opacity: 0.5;"></div>
+    <div class="fog-layer" style="animation-delay: -8s; height: 220px; width: 120%; left: -10%;"></div>
+  </div>
+
+  <div class="ui-content">
+    <p class="temp">9°C</p>
+    <p class="condition">Brouillard épais</p>
+  </div>
+</div>
+
+</body>
+</html>

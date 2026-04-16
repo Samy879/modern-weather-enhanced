@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=Modern Weather Enhanced
+Comment=Minimalist weather widget with advanced customization options.
+
+Type=Service
+Icon=weather-clouds
+X-KDE-ServiceTypes=Plasma/Applet
+
+X-Plasma-API=declarativeappletscript
+X-Plasma-MainScript=ui/main.qml
+X-KDE-PluginInfo-Name=com.github.samy879.modernweather
+X-KDE-PluginInfo-Author=Samy879
+X-KDE-PluginInfo-Email=samy.rk800@gmail.com
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Website=https://github.com/samy879/modern-weather-enhanced
+X-KDE-PluginInfo-Category=Utilities
+X-KDE-PluginInfo-License=GPL-3.0+
+X-KDE-PluginInfo-EnabledByDefault=true

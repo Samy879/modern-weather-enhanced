@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root {
+    /* Fond de nuit profonde */
+    --bg-color: #08090a;
+    /* Nuages gris-bleu foncé (masse principale) */
+    --cloud-base: rgba(45, 55, 75, 0.4);
+    /* Lueur subtile (reflet lunaire ou urbain) */
+    --cloud-highlight: rgba(100, 120, 160, 0.2);
+    --text-main: #ffffff;
+  }
+
+  body {
+    background: #1a1b26;
+    display: flex; justify-content: center; align-items: center;
+    height: 100vh; margin: 0;
+  }
+
+  .widget-preview {
+    position: relative;
+    width: 350px; height: 300px;
+    background: var(--bg-color);
+    border-radius: 16px;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  }
+
+  /* --- CONTENEUR DES NUAGES NOCTURNES --- */
+  .clouds-container {
+    position: absolute;
+    inset: -100px;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .cloud {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px); /* Flou équilibré pour la visibilité */
+    animation: drift linear infinite;
+  }
+
+  /* Types de nuages pour le relief nocturne */
+  .cloud-mass { background: var(--cloud-base); }
+  .cloud-glow { background: var(--cloud-highlight); }
+
+  /* Tailles */
+  .large { width: 400px; height: 200px; }
+  .medium { width: 280px; height: 140px; }
+  .small { width: 180px; height: 100px; }
+
+  @keyframes drift {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(200%); }
+  }
+
+  /* --- INTERFACE --- */
+  .ui-content {
+    position: relative; z-index: 10;
+    color: var(--text-main); text-align: center; padding-top: 50px;
+  }
+  .temp { font-size: 68px; font-weight: 800; margin: 0; letter-spacing: -2px; }
+  .condition { font-size: 20px; opacity: 0.7; margin-top: -5px; }
+</style>
+</head>
+<body>
+
+<div class="widget-preview">
+  <div class="clouds-container">
+    <div class="cloud cloud-mass large" style="top: 20%; left: -30%; animation-duration: 65s;"></div>
+    <div class="cloud cloud-mass medium" style="top: 50%; left: -10%; animation-duration: 80s; animation-delay: -20s;"></div>
+
+    <div class="cloud cloud-glow large" style="top: 10%; left: -50%; animation-duration: 45s; animation-delay: -10s;"></div>
+    <div class="cloud cloud-glow medium" style="top: 40%; left: -20%; animation-duration: 55s;"></div>
+
+    <div class="cloud cloud-mass small" style="top: 70%; left: -15%; animation-duration: 40s; opacity: 0.5;"></div>
+  </div>
+
+  <div class="ui-content">
+    <p class="temp">12.2°C</p>
+    <p class="condition">Nuit Couverte</p>
+  </div>
+</div>
+
+</body>
+</html>

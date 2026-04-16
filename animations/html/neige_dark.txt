@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root {
+    --bg-color: #0d0e17;
+    --flake-color: rgba(255, 255, 255, 0.9);
+    /* Lueur froide beaucoup plus subtile */
+    --cold-glow: rgba(180, 220, 255, 0.08);
+    --text-main: #ffffff;
+  }
+
+  body {
+    background: #1a1b26;
+    display: flex; justify-content: center; align-items: center;
+    height: 100vh; margin: 0;
+  }
+
+  .widget-preview {
+    position: relative;
+    width: 350px; height: 300px;
+    background: var(--bg-color);
+    border-radius: 16px;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  }
+
+  /* --- AMBIANCE FROIDE (Corrigée : très subtile en bas) --- */
+  .cold-mist {
+    position: absolute;
+    inset: 0;
+    /* Le centre est plus bas (110%) et le dégradé s'arrête plus tôt (50%) */
+    background: radial-gradient(circle at 50% 110%, var(--cold-glow) 0%, transparent 50%);
+    z-index: 1;
+  }
+
+  /* --- SYSTÈME DE FLOCONS --- */
+  .snow-container {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .flake {
+    position: absolute;
+    /* Position de départ par défaut (au-dessus) */
+    top: -20px;
+    background: var(--flake-color);
+    border-radius: 50%;
+    opacity: 0; /* Invisible au départ */
+  }
+
+  /* --- TAILLES ET PROFONDEUR --- */
+  /* Gros (proches, rapides, flous) */
+  .flake.large { width: 5px; height: 5px; filter: blur(2.5px); }
+  /* Moyens */
+  .flake.medium { width: 3.5px; height: 3.5px; filter: blur(1.5px); }
+  /* Petits (loin, lents, nets) */
+  .flake.small { width: 2px; height: 2px; filter: blur(0.5px); }
+
+  /* --- ANIMATIONS DE CHUTE COMPLEXES (Chemins prédéfinis) --- */
+
+  /* Chemin A : Oscillation douce vers la droite */
+  @keyframes fall-path-A {
+    0% { opacity: 0; transform: translate(0, 0); }
+    10% { opacity: 1; transform: translate(-2px, -5px); } /* Petit courant ascendant initial */
+    25% { transform: translate(5px, 40px); }
+    50% { transform: translate(-3px, 120px); }
+    75% { transform: translate(8px, 220px); }
+    100% { opacity: 0.4; transform: translate(2px, 350px); } /* Finit toujours en bas */
+  }
+
+  /* Chemin B : Oscillation plus large vers la gauche */
+  @keyframes fall-path-B {
+    0% { opacity: 0; transform: translate(0, 0); }
+    15% { opacity: 1; transform: translate(3px, -8px); } /* Petit courant ascendant initial */
+    35% { transform: translate(-10px, 60px); }
+    65% { transform: translate(5px, 180px); }
+    100% { opacity: 0.4; transform: translate(-8px, 360px); } /* Finit toujours en bas */
+  }
+
+  /* --- INTERFACE --- */
+  .ui-content {
+    position: relative; z-index: 10;
+    color: var(--text-main); text-align: center; padding-top: 50px;
+  }
+  .temp { font-size: 68px; font-weight: 800; margin: 0; }
+  .condition { font-size: 20px; opacity: 0.7; margin-top: -5px; }
+</style>
+</head>
+<body>
+
+<div class="widget-preview">
+  <div class="cold-mist"></div>
+
+  <div class="snow-container">
+    <div class="flake large" style="left: 20%; animation: fall-path-A 5s infinite linear; animation-delay: 0.5s;"></div>
+    <div class="flake large" style="left: 60%; animation: fall-path-B 5.5s infinite linear; animation-delay: 2.5s;"></div>
+
+    <div class="flake medium" style="left: 10%; animation: fall-path-B 7s infinite linear; animation-delay: 1s;"></div>
+    <div class="flake medium" style="left: 85%; animation: fall-path-A 8s infinite linear; animation-delay: 0s;"></div>
+    <div class="flake medium" style="left: 45%; animation: fall-path-B 7.5s infinite linear; animation-delay: 4s;"></div>
+
+    <div class="flake small" style="left: 30%; animation: fall-path-A 11s infinite linear; animation-delay: 2s;"></div>
+    <div class="flake small" style="left: 75%; animation: fall-path-B 12s infinite linear; animation-delay: 1.5s;"></div>
+    <div class="flake small" style="left: 5%;  animation: fall-path-A 10s infinite linear; animation-delay: 5s;"></div>
+    <div class="flake small" style="left: 95%; animation: fall-path-B 13s infinite linear; animation-delay: 3s;"></div>
+  </div>
+
+  <div class="ui-content">
+    <p class="temp">-2.4°C</p>
+    <p class="condition">Neige Légère</p>
+  </div>
+</div>
+
+</body>
+</html>
