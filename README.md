@@ -34,7 +34,7 @@ kpackagetool6 --type Plasma/Applet --install modern-weather-enhanced.plasmoid
    3. Or, in the Add Widgets menu, click the menu button and select Install from Local File...
 
 ## 🌟 Support the Project
-Feedback and feature requests are always welcome! If you find this widget useful, please consider starring the repository on GitHub or leaving a rating on [Opendesktop](https://www.opendesktop.org/p/2356087/). Your support and suggestions help keep the project alive and improving!
+Feedback and feature requests are always welcome! If you find this widget useful, please consider starring the repository on GitHub or leaving a rating on the [KDE Store](https://store.kde.org/p/2356087). Your support and suggestions help keep the project alive and improving!
 
 ## 🤝 Credits
 - Original Creator: [zayronxio](https://github.com/zayronxio) for the original Chaac Minimal Weather.
