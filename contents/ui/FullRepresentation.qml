@@ -44,6 +44,14 @@ ColumnLayout {
         Layout.rightMargin: Kirigami.Units.gridUnit
         spacing: 0
 
+        // --- NOUVEAU : ESPACEUR GAUCHE ---
+        // Il ne devient actif (visible) que si le bloc de droite est caché.
+        // Cela force la température à se déplacer vers le centre.
+        Item {
+            Layout.fillWidth: true
+            visible: !rightSideContainer.visible
+        }
+
         // BLOC TEMPÉRATURE
         Row {
             id: tempContainer
@@ -64,6 +72,9 @@ ColumnLayout {
             }
         }
 
+        // ESPACEUR CENTRAL / DROIT
+        // Toujours présent : il sert de séparation quand la droite est là,
+        // et de contrepoids pour centrer quand la droite est cachée.
         Item { Layout.fillWidth: true }
 
         // CONTAINER DE DROITE
@@ -80,33 +91,27 @@ ColumnLayout {
                 Layout.fillWidth: true
                 text: weatherData.weatherLongtext
                 font.pixelSize: text.length <= 10 ? Kirigami.Units.gridUnit * 1.3 : Kirigami.Units.gridUnit * 1.0
-                opacity: text.length <= 10 ? 1.0 : 0.85
+                opacity: 1.0
                 wrapMode: Text.WordWrap
                 maximumLineCount: 2
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
             }
 
-            // OPTION B : Grille d'infos (2x2 serrée avec remplissage par la droite)
+            // OPTION B : Grille d'infos
             GridLayout {
                 id: detailsGrid
                 visible: !root.showConditionFull && anyDetailEnabled
                 columns: 2
-
-                // --- RÉGLAGES POUR SERRER ---
                 rowSpacing: 0
-                columnSpacing: Kirigami.Units.smallSpacing // Plus petit qu'avant
-
-                // --- RÉGLAGE POUR ALIGNER LE 3ème À DROITE ---
+                columnSpacing: Kirigami.Units.smallSpacing
                 layoutDirection: Qt.RightToLeft
-
                 Layout.alignment: Qt.AlignHCenter
 
                 component CompactGridItem : ColumnLayout {
                     property string label: ""
                     property string value: ""
                     spacing: 0
-                    // On réduit la largeur ici pour serrer les colonnes
                     Layout.preferredWidth: Kirigami.Units.gridUnit * 2.2
 
                     PlasmaComponents3.Label {
@@ -125,7 +130,6 @@ ColumnLayout {
                     }
                 }
 
-                // L'ordre d'affichage (avec RightToLeft, le premier est en haut à DROITE)
                 CompactGridItem {
                     visible: root.showWind
                     label: i18n("Wind")
@@ -144,12 +148,10 @@ ColumnLayout {
                 CompactGridItem {
                     visible: root.showApparentTemp
                     label: i18n("Feels")
-                    value: Math.round(weatherData.apparentTemp) + "°"
+                    value: Math.round(weatherData.apparentTemp) + unitStr
                 }
             }
         }
-
-        Item { Layout.fillWidth: true }
     }
 
     // 2. SECTION MILIEU (Prévisions)
