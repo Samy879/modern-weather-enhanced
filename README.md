@@ -38,7 +38,7 @@ Feedback and feature requests are always welcome! If you find this widget useful
 
 ## 🤝 Credits
 - Original Creator: [zayronxio](https://github.com/zayronxio) for the original Chaac Minimal Weather.
-- Contributors: [Nicolas-Gth](https://github.com/Nicolas-Gth) for essential Plasma 6 bugfixes (WMO codes, 24h format, and day/night detection).
+- Contributors: [Nicolas-Gth](https://github.com/Nicolas-Gth) for essential bugfixes (WMO codes, 24h format, day/night detection, and deprecated Label).
 - Enhanced & Maintained by: [Samy879](https://github.com/Samy879).
 
 ## 📄 License
