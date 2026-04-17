@@ -103,7 +103,7 @@ ColumnLayout {
                 id: detailsGrid
                 visible: !root.showConditionFull && anyDetailEnabled
                 columns: 2
-                rowSpacing: 0
+                rowSpacing: Kirigami.Units.gridUnit * 0.2
                 columnSpacing: Kirigami.Units.smallSpacing
                 layoutDirection: Qt.RightToLeft
                 Layout.alignment: Qt.AlignHCenter
