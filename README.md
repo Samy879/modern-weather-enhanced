@@ -37,9 +37,9 @@ kpackagetool6 --type Plasma/Applet --install modern-weather-enhanced.plasmoid
 Feedback and feature requests are always welcome! If you find this widget useful, please consider starring the repository on GitHub or leaving a rating on [Opendesktop](https://www.opendesktop.org/p/2356087/). Your support and suggestions help keep the project alive and improving!
 
 ## 🤝 Credits
-- Original Creator: zayronxio for the original Chaac Minimal Weather.
-- Contributors: Nicolas-Gth for essential Plasma 6 bugfixes (WMO codes, 24h format, and day/night detection).
-- Enhanced & Maintained by: Samy879.
+- Original Creator: [zayronxio](https://github.com/zayronxio) for the original Chaac Minimal Weather.
+- Contributors: [Nicolas-Gth](https://github.com/Nicolas-Gth) for essential Plasma 6 bugfixes (WMO codes, 24h format, and day/night detection).
+- Enhanced & Maintained by: [Samy879](https://github.com/Samy879).
 
 ## 📄 License
 This project is licensed under the GPL-3.0 License.
