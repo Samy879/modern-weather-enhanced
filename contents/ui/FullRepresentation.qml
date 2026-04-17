@@ -14,10 +14,6 @@ ColumnLayout {
     readonly property string currentTempText: weatherData.temperaturaActualPopup
     readonly property bool detailsVisible: root.showApparentTemp || root.showHumidity || root.showUVIndex || root.showWind
 
-    // --- RÉGLAGES DE SYMÉTRIE ---
-    // Cette valeur gère l'espace tout en haut et tout en bas
-    readonly property int outerPadding: Kirigami.Units.gridUnit * 0.2
-
     readonly property int fixedWidth: Kirigami.Units.gridUnit * 15;
 
     // Hauteur totale du widget
@@ -37,12 +33,14 @@ ColumnLayout {
 
     spacing: 0
 
-    // 1. SECTION HAUTE (Température actuelle)
+    // 1. SECTION HAUTE (Température)
     RowLayout {
         id: headerSection
         Layout.fillWidth: true
-        Layout.topMargin: outerPadding
-        Layout.bottomMargin: Kirigami.Units.smallSpacing
+
+        // Remonte le haut du widget
+        Layout.topMargin: -Kirigami.Units.smallSpacing
+
         Layout.leftMargin: Kirigami.Units.gridUnit
         Layout.rightMargin: Kirigami.Units.gridUnit
         spacing: Kirigami.Units.largeSpacing
@@ -77,19 +75,20 @@ ColumnLayout {
     }
 
     // 2. SECTION MILIEU (Icônes prévisions)
-    // Elle prend tout l'espace libre (fillHeight) et centre son contenu
     RowLayout {
         id: forecastSection
         Layout.fillWidth: true
         Layout.fillHeight: true
-        Layout.alignment: Qt.AlignVCenter
+
+        Layout.topMargin: -Kirigami.Units.gridUnit * 0.5
+        Layout.bottomMargin: 0
         spacing: 0
 
         Repeater {
             model: 3
             delegate: ColumnLayout {
                 Layout.fillWidth: true
-                spacing: 2
+                spacing: 0
                 readonly property int dayIndex: modelData + root.forecastStartDay
 
                 PlasmaComponents3.Label {
@@ -133,8 +132,8 @@ ColumnLayout {
         Layout.fillWidth: true
         Layout.preferredHeight: Kirigami.Units.gridUnit * 2.2
 
-        Layout.topMargin: Kirigami.Units.smallSpacing
-        Layout.bottomMargin: outerPadding // Symétrie avec le haut
+        Layout.topMargin: 0
+        Layout.bottomMargin: 0
 
         Layout.leftMargin: Kirigami.Units.gridUnit * 0.5
         Layout.rightMargin: Kirigami.Units.gridUnit * 0.5
