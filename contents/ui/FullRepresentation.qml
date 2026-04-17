@@ -10,26 +10,24 @@ ColumnLayout {
     property var weatherData: root.weatherSource
     property string temperatureUnit: root.temperatureUnit
 
-    // --- LOGIQUE DU PANEL ---
     readonly property string unitStr: (temperatureUnit === "0" || temperatureUnit == 0) ? "°C" : "°F"
-
-    // Valeur arrondie uniquement
     readonly property string currentTempText: weatherData.temperaturaActualPopup
-
-    // --- LOGIQUE DE VISIBILITÉ ---
     readonly property bool detailsVisible: root.showApparentTemp || root.showHumidity || root.showUVIndex || root.showWind
 
-    // --- DIMENSIONS DYNAMIQUES ---
+    // --- RÉGLAGES DE SYMÉTRIE ---
+    // Cette valeur gère l'espace tout en haut et tout en bas
+    readonly property int outerPadding: Kirigami.Units.gridUnit * 0.2
+
     readonly property int fixedWidth: Kirigami.Units.gridUnit * 15;
 
+    // Hauteur totale du widget
     readonly property int calculatedHeight: {
-        let base = Kirigami.Units.gridUnit * 13;
+        let base = Kirigami.Units.gridUnit * 12.5;
         return detailsVisible ? base : (base - Kirigami.Units.gridUnit * 2.5);
     }
 
     width: fixedWidth
     height: calculatedHeight
-
     Layout.minimumWidth: fixedWidth
     Layout.maximumWidth: fixedWidth
     Layout.preferredWidth: fixedWidth
@@ -39,35 +37,29 @@ ColumnLayout {
 
     spacing: 0
 
-    // SECTION HAUTE : TEMPÉRATURE ET CONDITION
+    // 1. SECTION HAUTE (Température actuelle)
     RowLayout {
         id: headerSection
         Layout.fillWidth: true
-        Layout.fillHeight: true
-        Layout.topMargin: Kirigami.Units.largeSpacing
+        Layout.topMargin: outerPadding
+        Layout.bottomMargin: Kirigami.Units.smallSpacing
         Layout.leftMargin: Kirigami.Units.gridUnit
         Layout.rightMargin: Kirigami.Units.gridUnit
         spacing: Kirigami.Units.largeSpacing
 
-        // Température avec décalage global et dynamique pour chiffre unique
         Row {
             spacing: 0
             Layout.alignment: Qt.AlignVCenter
-            // Marge à gauche (0 pour rester au bord comme demandé)
-            Layout.leftMargin: Kirigami.Units.gridUnit * 0
-
             PlasmaComponents3.Label {
                 text: currentTempText
                 font.pixelSize: Kirigami.Units.gridUnit * 2.5
                 font.bold: true
-                // Décalage conservé pour l'équilibre optique si 1 seul chiffre
                 leftPadding: currentTempText.length === 1 ? Kirigami.Units.gridUnit * 0.4 : 0
             }
             PlasmaComponents3.Label {
                 text: unitStr
                 font.pixelSize: Kirigami.Units.gridUnit * 1.5
                 font.bold: true
-                Layout.alignment: Qt.AlignTop
                 topPadding: Kirigami.Units.gridUnit * 0.2
             }
         }
@@ -81,91 +73,16 @@ ColumnLayout {
             maximumLineCount: 2
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignVCenter
         }
     }
 
-    // LIGNE DE DÉTAILS (AUTOCENTRÉE ET EXTENSIBLE)
-    RowLayout {
-        id: detailsRow
-        visible: detailsVisible
-        Layout.fillWidth: true
-        Layout.fillHeight: true
-        Layout.leftMargin: Kirigami.Units.gridUnit * 0.5
-        Layout.rightMargin: Kirigami.Units.gridUnit * 0.5
-        spacing: 0
-
-        component DetailColumn : ColumnLayout {
-            property string label: ""
-            property string value: ""
-            Layout.fillWidth: true
-            spacing: 0
-
-            PlasmaComponents3.Label {
-                text: label
-                font.pixelSize: Kirigami.Units.gridUnit * 0.55
-                Layout.fillWidth: true
-                horizontalAlignment: Text.AlignHCenter
-                opacity: 0.7
-            }
-            PlasmaComponents3.Label {
-                text: value
-                // Taille réduite de 0.75 à 0.70 pour affiner le texte (notamment le vent)
-                font.pixelSize: Kirigami.Units.gridUnit * 0.70
-                Layout.fillWidth: true
-                horizontalAlignment: Text.AlignHCenter
-            }
-        }
-
-        DetailColumn {
-            visible: root.showApparentTemp
-            label: i18n("Apparent Temp")
-            value: weatherData.apparentTemp + unitStr
-        }
-
-        Rectangle {
-            visible: root.showApparentTemp && (root.showHumidity || root.showUVIndex || root.showWind)
-            Layout.preferredWidth: 1; Layout.preferredHeight: Kirigami.Units.gridUnit * 1.5;
-            color: Kirigami.Theme.textColor; opacity: 0.15; Layout.alignment: Qt.AlignVCenter
-        }
-
-        DetailColumn {
-            visible: root.showHumidity
-            label: i18n("Humidity")
-            value: weatherData.humidity + "%"
-        }
-
-        Rectangle {
-            visible: root.showHumidity && (root.showUVIndex || root.showWind)
-            Layout.preferredWidth: 1; Layout.preferredHeight: Kirigami.Units.gridUnit * 1.5;
-            color: Kirigami.Theme.textColor; opacity: 0.15; Layout.alignment: Qt.AlignVCenter
-        }
-
-        DetailColumn {
-            visible: root.showUVIndex
-            label: i18n("UV Index")
-            value: weatherData.uvIndex
-        }
-
-        Rectangle {
-            visible: root.showUVIndex && root.showWind
-            Layout.preferredWidth: 1; Layout.preferredHeight: Kirigami.Units.gridUnit * 1.5;
-            color: Kirigami.Theme.textColor; opacity: 0.15; Layout.alignment: Qt.AlignVCenter
-        }
-
-        DetailColumn {
-            visible: root.showWind
-            label: i18n("Wind")
-            value: Math.round(weatherData.windSpeed) + " km/h"
-        }
-    }
-
-    // SECTION BASSE : PRÉVISIONS
+    // 2. SECTION MILIEU (Icônes prévisions)
+    // Elle prend tout l'espace libre (fillHeight) et centre son contenu
     RowLayout {
         id: forecastSection
         Layout.fillWidth: true
         Layout.fillHeight: true
-        Layout.bottomMargin: Kirigami.Units.largeSpacing
+        Layout.alignment: Qt.AlignVCenter
         spacing: 0
 
         Repeater {
@@ -206,6 +123,84 @@ ColumnLayout {
                     }
                 }
             }
+        }
+    }
+
+    // 3. SECTION BASSE (Détails - Humidité, Vent, etc.)
+    RowLayout {
+        id: detailsRow
+        visible: detailsVisible
+        Layout.fillWidth: true
+        Layout.preferredHeight: Kirigami.Units.gridUnit * 2.2
+
+        Layout.topMargin: Kirigami.Units.smallSpacing
+        Layout.bottomMargin: outerPadding // Symétrie avec le haut
+
+        Layout.leftMargin: Kirigami.Units.gridUnit * 0.5
+        Layout.rightMargin: Kirigami.Units.gridUnit * 0.5
+        spacing: 0
+
+        component DetailColumn : ColumnLayout {
+            property string label: ""
+            property string value: ""
+            Layout.fillWidth: true
+            spacing: 0
+
+            PlasmaComponents3.Label {
+                text: label
+                font.pixelSize: Kirigami.Units.gridUnit * 0.55
+                Layout.fillWidth: true
+                horizontalAlignment: Text.AlignHCenter
+                opacity: 0.7
+            }
+            PlasmaComponents3.Label {
+                text: value
+                font.pixelSize: Kirigami.Units.gridUnit * 0.70
+                Layout.fillWidth: true
+                horizontalAlignment: Text.AlignHCenter
+            }
+        }
+
+        DetailColumn {
+            visible: root.showApparentTemp
+            label: i18n("Apparent Temp")
+            value: weatherData.apparentTemp + unitStr
+        }
+
+        Rectangle {
+            visible: root.showApparentTemp && (root.showHumidity || root.showUVIndex || root.showWind)
+            Layout.preferredWidth: 1; Layout.preferredHeight: Kirigami.Units.gridUnit * 1.2;
+            color: Kirigami.Theme.textColor; opacity: 0.15; Layout.alignment: Qt.AlignVCenter
+        }
+
+        DetailColumn {
+            visible: root.showHumidity
+            label: i18n("Humidity")
+            value: weatherData.humidity + "%"
+        }
+
+        Rectangle {
+            visible: root.showHumidity && (root.showUVIndex || root.showWind)
+            Layout.preferredWidth: 1; Layout.preferredHeight: Kirigami.Units.gridUnit * 1.2;
+            color: Kirigami.Theme.textColor; opacity: 0.15; Layout.alignment: Qt.AlignVCenter
+        }
+
+        DetailColumn {
+            visible: root.showUVIndex
+            label: i18n("UV Index")
+            value: weatherData.uvIndex
+        }
+
+        Rectangle {
+            visible: root.showUVIndex && root.showWind
+            Layout.preferredWidth: 1; Layout.preferredHeight: Kirigami.Units.gridUnit * 1.2;
+            color: Kirigami.Theme.textColor; opacity: 0.15; Layout.alignment: Qt.AlignVCenter
+        }
+
+        DetailColumn {
+            visible: root.showWind
+            label: i18n("Wind")
+            value: Math.round(weatherData.windSpeed) + " km/h"
         }
     }
 }
