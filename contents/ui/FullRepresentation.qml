@@ -103,10 +103,11 @@ ColumnLayout {
                 id: detailsGrid
                 visible: !root.showConditionFull && anyDetailEnabled
                 columns: 2
-                rowSpacing: Kirigami.Units.gridUnit * 0.2
+                rowSpacing: Kirigami.Units.gridUnit * 0.3
                 columnSpacing: Kirigami.Units.smallSpacing
                 layoutDirection: Qt.RightToLeft
-                Layout.alignment: Qt.AlignHCenter
+                Layout.alignment: Qt.AlignRight
+                Layout.rightMargin: -7
 
                 component CompactGridItem : ColumnLayout {
                     property string label: ""
