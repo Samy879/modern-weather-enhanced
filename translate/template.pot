@@ -123,3 +123,15 @@ msgstr ""
 
 msgid "Forecast start day offset:"
 msgstr ""
+
+msgid "Show condition text (Full view):"
+msgstr ""
+
+msgid "Feels"
+msgstr ""
+
+msgid "Hum"
+msgstr ""
+
+msgid "UV"
+msgstr ""

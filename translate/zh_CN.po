@@ -117,3 +117,15 @@ msgstr "风速"
 
 msgid "Forecast start day offset:"
 msgstr "预报开始日偏移:"
+
+msgid "Show condition text (Full view):"
+msgstr "显示天气状况文本 (详细视图):"
+
+msgid "Feels"
+msgstr "体感"
+
+msgid "Hum"
+msgstr "湿度"
+
+msgid "UV"
+msgstr "UV指数"

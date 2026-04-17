@@ -14,10 +14,10 @@ PlasmoidItem {
     id: weatherSource
   }
 
+  // Propriétés de configuration (Lien avec main.xml)
   property bool boldTempPanel: Plasmoid.configuration.boldTempPanel
   property bool boldCondPanel: Plasmoid.configuration.boldCondPanel
   property bool reverseOrder: Plasmoid.configuration.reverseOrder
-  property bool boldfonts: Plasmoid.configuration.boldfonts
   property string temperatureUnit: Plasmoid.configuration.temperatureUnit
   property real sizeFontTemp: Plasmoid.configuration.sizeFontTemp
   property real sizeFontCond: Plasmoid.configuration.sizeFontCond
@@ -27,6 +27,9 @@ PlasmoidItem {
   property bool showHumidity: Plasmoid.configuration.showHumidity
   property bool showUVIndex: Plasmoid.configuration.showUVIndex
   property bool showWind: Plasmoid.configuration.showWind
+
+  // Gère l'affichage du titre dans la vue détaillée
+  property bool showConditionFull: Plasmoid.configuration.showConditionFull
 
   property bool textweather: Plasmoid.configuration.textweather
   property int forecastStartDay: Plasmoid.configuration.forecastStartDay
@@ -52,7 +55,9 @@ PlasmoidItem {
   compactRepresentation: CompactRepresentation {
     weatherData: weatherSource
   }
+
   fullRepresentation: FullRepresentation {
+    // CORRECTION : On passe l'objet weatherSource à la représentation
     weatherData: weatherSource
   }
 }

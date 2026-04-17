@@ -117,3 +117,15 @@ msgstr "Rüzgar Hızı"
 
 msgid "Forecast start day offset:"
 msgstr "Tahmin başlangıç günü farkı:"
+
+msgid "Show condition text (Full view):"
+msgstr "Durum metnini göster (Tam görünüm):"
+
+msgid "Feels"
+msgstr "Hissedilen"
+
+msgid "Hum"
+msgstr "Nem"
+
+msgid "UV"
+msgstr "UV"

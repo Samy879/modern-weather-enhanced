@@ -7,6 +7,7 @@ Kirigami.ScrollablePage {
     id: configRoot
     title: i18n("General")
 
+    property alias cfg_showConditionFull: conditionFullCheck.checked
     property alias cfg_useCoordinatesIp: autoCoorde.checked
     property alias cfg_latitudeC: latitudeField.text
     property alias cfg_longitudeC: longitudeField.text
@@ -20,14 +21,13 @@ Kirigami.ScrollablePage {
     property alias cfg_boldTempPanel: boldTempCheck.checked
     property alias cfg_sizeFontCond: fontSizeCondSpin.realValue
     property alias cfg_boldCondPanel: boldCondCheck.checked
-    property alias cfg_boldfonts: boldFontsGlobalCheck.checked
     property alias cfg_forecastStartDay: startDaySpin.value
     property alias cfg_showApparentTemp: apparentCheck.checked
     property alias cfg_showHumidity: humidityCheck.checked
     property alias cfg_showUVIndex: uvCheck.checked
     property alias cfg_showWind: windCheck.checked
 
-    // Ces valeurs doivent correspondre aux <default> du main.xml
+    readonly property bool cfg_showConditionFullDefault: true
     readonly property bool cfg_useCoordinatesIpDefault: true
     readonly property string cfg_latitudeCDefault: "0"
     readonly property string cfg_longitudeCDefault: "0"
@@ -36,7 +36,6 @@ Kirigami.ScrollablePage {
     readonly property int cfg_temperatureUnitDefault: 0
     readonly property double cfg_sizeFontTempDefault: 11.0
     readonly property double cfg_sizeFontCondDefault: 10.0
-    readonly property bool cfg_boldfontsDefault: false
     readonly property bool cfg_textweatherDefault: true
     readonly property bool cfg_preciseTempDefault: false
     readonly property int cfg_updateIntervalDefault: 15
@@ -49,7 +48,6 @@ Kirigami.ScrollablePage {
     readonly property bool cfg_showWindDefault: true
 
     Kirigami.FormLayout {
-
         // --- LOCALISATION ---
         CheckBox {
             id: autoCoorde
@@ -89,7 +87,11 @@ Kirigami.ScrollablePage {
         }
         CheckBox {
             id: conditionOnPanelCheck
-            Kirigami.FormData.label: i18n("Show condition text:")
+            Kirigami.FormData.label: i18n("Show condition text (panel):")
+        }
+        CheckBox {
+            id: conditionFullCheck
+            Kirigami.FormData.label: i18n("Show condition text (Full view):")
         }
         CheckBox {
             id: preciseTempCheck
@@ -133,12 +135,6 @@ Kirigami.ScrollablePage {
         CheckBox {
             id: boldCondCheck
             Kirigami.FormData.label: i18n("Bold condition text:")
-        }
-
-        // Ajout de la case à cocher pour l'option globale de police grasse
-        CheckBox {
-            id: boldFontsGlobalCheck
-            Kirigami.FormData.label: i18n("Use bold fonts everywhere:")
         }
 
         Kirigami.Separator { }

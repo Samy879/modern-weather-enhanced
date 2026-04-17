@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Controls
 import org.kde.plasma.plasmoid
 import org.kde.plasma.components as PlasmaComponents3
 import "components" as Components
@@ -12,14 +13,15 @@ ColumnLayout {
 
     readonly property string unitStr: (temperatureUnit === "0" || temperatureUnit == 0) ? "°C" : "°F"
     readonly property string currentTempText: weatherData.temperaturaActualPopup
-    readonly property bool detailsVisible: root.showApparentTemp || root.showHumidity || root.showUVIndex || root.showWind
+
+    readonly property bool anyDetailEnabled: root.showApparentTemp || root.showHumidity || root.showUVIndex || root.showWind
+    readonly property bool showBottomDetails: anyDetailEnabled && root.showConditionFull
 
     readonly property int fixedWidth: Kirigami.Units.gridUnit * 15;
 
-    // Hauteur totale du widget
     readonly property int calculatedHeight: {
         let base = Kirigami.Units.gridUnit * 12.5;
-        return detailsVisible ? base : (base - Kirigami.Units.gridUnit * 2.5);
+        return (showBottomDetails) ? base : (base - Kirigami.Units.gridUnit * 2.5);
     }
 
     width: fixedWidth
@@ -33,21 +35,21 @@ ColumnLayout {
 
     spacing: 0
 
-    // 1. SECTION HAUTE (Température)
+    // 1. SECTION HAUTE
     RowLayout {
         id: headerSection
         Layout.fillWidth: true
-
-        // Remonte le haut du widget
         Layout.topMargin: -Kirigami.Units.smallSpacing
-
         Layout.leftMargin: Kirigami.Units.gridUnit
         Layout.rightMargin: Kirigami.Units.gridUnit
-        spacing: Kirigami.Units.largeSpacing
+        spacing: 0
 
+        // BLOC TEMPÉRATURE
         Row {
+            id: tempContainer
             spacing: 0
             Layout.alignment: Qt.AlignVCenter
+
             PlasmaComponents3.Label {
                 text: currentTempText
                 font.pixelSize: Kirigami.Units.gridUnit * 2.5
@@ -62,26 +64,100 @@ ColumnLayout {
             }
         }
 
-        PlasmaComponents3.Label {
-            text: weatherData.weatherLongtext
-            font.pixelSize: Kirigami.Units.gridUnit * 1.0
-            opacity: 0.85
+        Item { Layout.fillWidth: true }
+
+        // CONTAINER DE DROITE
+        ColumnLayout {
+            id: rightSideContainer
             Layout.fillWidth: true
-            wrapMode: Text.WordWrap
-            maximumLineCount: 2
-            horizontalAlignment: Text.AlignHCenter
-            verticalAlignment: Text.AlignVCenter
+            Layout.alignment: Qt.AlignVCenter
+            spacing: 0
+            visible: root.showConditionFull || anyDetailEnabled
+
+            // OPTION A : Le Titre
+            PlasmaComponents3.Label {
+                visible: root.showConditionFull
+                Layout.fillWidth: true
+                text: weatherData.weatherLongtext
+                font.pixelSize: text.length <= 10 ? Kirigami.Units.gridUnit * 1.3 : Kirigami.Units.gridUnit * 1.0
+                opacity: text.length <= 10 ? 1.0 : 0.85
+                wrapMode: Text.WordWrap
+                maximumLineCount: 2
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
+
+            // OPTION B : Grille d'infos (2x2 serrée avec remplissage par la droite)
+            GridLayout {
+                id: detailsGrid
+                visible: !root.showConditionFull && anyDetailEnabled
+                columns: 2
+
+                // --- RÉGLAGES POUR SERRER ---
+                rowSpacing: 0
+                columnSpacing: Kirigami.Units.smallSpacing // Plus petit qu'avant
+
+                // --- RÉGLAGE POUR ALIGNER LE 3ème À DROITE ---
+                layoutDirection: Qt.RightToLeft
+
+                Layout.alignment: Qt.AlignHCenter
+
+                component CompactGridItem : ColumnLayout {
+                    property string label: ""
+                    property string value: ""
+                    spacing: 0
+                    // On réduit la largeur ici pour serrer les colonnes
+                    Layout.preferredWidth: Kirigami.Units.gridUnit * 2.2
+
+                    PlasmaComponents3.Label {
+                        text: label
+                        font.pixelSize: Kirigami.Units.gridUnit * 0.5
+                        opacity: 0.6
+                        Layout.fillWidth: true
+                        horizontalAlignment: Text.AlignHCenter
+                    }
+                    PlasmaComponents3.Label {
+                        text: value
+                        font.pixelSize: Kirigami.Units.gridUnit * 0.65
+                        font.bold: true
+                        Layout.fillWidth: true
+                        horizontalAlignment: Text.AlignHCenter
+                    }
+                }
+
+                // L'ordre d'affichage (avec RightToLeft, le premier est en haut à DROITE)
+                CompactGridItem {
+                    visible: root.showWind
+                    label: i18n("Wind")
+                    value: Math.round(weatherData.windSpeed) + (unitStr === "°C" ? " km/h" : " mph")
+                }
+                CompactGridItem {
+                    visible: root.showUVIndex
+                    label: i18n("UV")
+                    value: weatherData.uvIndex
+                }
+                CompactGridItem {
+                    visible: root.showHumidity
+                    label: i18n("Hum")
+                    value: weatherData.humidity + "%"
+                }
+                CompactGridItem {
+                    visible: root.showApparentTemp
+                    label: i18n("Feels")
+                    value: Math.round(weatherData.apparentTemp) + "°"
+                }
+            }
         }
+
+        Item { Layout.fillWidth: true }
     }
 
-    // 2. SECTION MILIEU (Icônes prévisions)
+    // 2. SECTION MILIEU (Prévisions)
     RowLayout {
         id: forecastSection
         Layout.fillWidth: true
         Layout.fillHeight: true
-
         Layout.topMargin: -Kirigami.Units.gridUnit * 0.5
-        Layout.bottomMargin: 0
         spacing: 0
 
         Repeater {
@@ -125,16 +201,12 @@ ColumnLayout {
         }
     }
 
-    // 3. SECTION BASSE (Détails - Humidité, Vent, etc.)
+    // 3. SECTION BASSE
     RowLayout {
         id: detailsRow
-        visible: detailsVisible
+        visible: showBottomDetails
         Layout.fillWidth: true
         Layout.preferredHeight: Kirigami.Units.gridUnit * 2.2
-
-        Layout.topMargin: 0
-        Layout.bottomMargin: 0
-
         Layout.leftMargin: Kirigami.Units.gridUnit * 0.5
         Layout.rightMargin: Kirigami.Units.gridUnit * 0.5
         spacing: 0
@@ -199,7 +271,7 @@ ColumnLayout {
         DetailColumn {
             visible: root.showWind
             label: i18n("Wind")
-            value: Math.round(weatherData.windSpeed) + " km/h"
+            value: Math.round(weatherData.windSpeed) + (unitStr === "°C" ? " km/h" : " mph")
         }
     }
 }

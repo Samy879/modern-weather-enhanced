@@ -116,3 +116,15 @@ msgstr "Windsnelheid"
 
 msgid "Forecast start day offset:"
 msgstr "Startdag offset voorspelling:"
+
+msgid "Show condition text (Full view):"
+msgstr "Conditietekst tonen (Volledige weergave):"
+
+msgid "Feels"
+msgstr "Gevoel"
+
+msgid "Hum"
+msgstr "Vocht"
+
+msgid "UV"
+msgstr "UV"

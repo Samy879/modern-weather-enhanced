@@ -18,6 +18,9 @@
     <entry name="showConditionOnPanel" type="bool">
       <default>true</default>
     </entry>
+    <entry name="showConditionFull" type="Bool">
+      <default>true</default>
+    </entry>
     <entry name="reverseOrder" type="bool">
       <default>false</default>
     </entry>
@@ -30,9 +33,6 @@
     <entry name="sizeFontCond" type="double">
       <default>10.0</default>
     </entry>
-    <entry name="boldfonts" type="bool">
-      <default>false</default>
-    </entry>
     <entry name="textweather" type="bool">
       <default>true</default>
     </entry>
@@ -43,10 +43,10 @@
       <default>15</default>
     </entry>
     <entry name="forecastStartDay" type="int">
-      <default>1</default>
+      <default>0</default>
     </entry>
     <entry name="boldTempPanel" type="bool">
-      <default>false</default>
+      <default>true</default>
     </entry>
     <entry name="boldCondPanel" type="bool">
       <default>false</default>

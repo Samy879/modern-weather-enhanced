@@ -117,3 +117,15 @@ msgstr "Rüzgar Hızı"
 
 msgid "Forecast start day offset:"
 msgstr "Tahmin başlangıç günü farkı:"
+
+msgid "Show condition text (Full view):"
+msgstr "Hiển thị văn bản điều kiện (Chế độ xem đầy đủ):"
+
+msgid "Feels"
+msgstr "Cảm giác"
+
+msgid "Hum"
+msgstr "Độ ẩm"
+
+msgid "UV"
+msgstr "UV"

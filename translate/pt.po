@@ -116,3 +116,15 @@ msgstr "Velocidade do vento"
 
 msgid "Forecast start day offset:"
 msgstr "Deslocamento do dia de início da previsão:"
+
+msgid "Show condition text (Full view):"
+msgstr "Mostrar texto de condição (Vista detalhada):"
+
+msgid "Feels"
+msgstr "Sensação"
+
+msgid "Hum"
+msgstr "Hum."
+
+msgid "UV"
+msgstr "UV"
