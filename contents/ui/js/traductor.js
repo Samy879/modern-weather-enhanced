@@ -5,6 +5,8 @@ function weatherShortText(languageCode, code) {
             1: "Clear",
             2: "Cloudy",
             3: "Cloudy",
+            45: "Fog",
+            48: "Fog",
             51: "Drizzle",
             53: "Drizzle",
             55: "Drizzle",
@@ -33,6 +35,8 @@ function weatherShortText(languageCode, code) {
             1: "Despejado",
             2: "Nublado",
             3: "Nublado",
+            45: "Niebla",
+            48: "Niebla",
             51: "Llovizna",
             53: "Llovizna",
             55: "Llovizna",
@@ -61,6 +65,8 @@ function weatherShortText(languageCode, code) {
             1: "साफ",
             2: "बादल",
             3: "बादल",
+            45: "कोहरा",
+            48: "कोहरा",
             51: "बूँदा बाँदी",
             53: "बूँदा बाँदी",
             55: "बूँदा बाँदी",
@@ -89,6 +95,8 @@ function weatherShortText(languageCode, code) {
             1: "Clair",
             2: "Nuageux",
             3: "Nuageux",
+            45: "Brouillard",
+            48: "Brouillard",
             51: "Bruine",
             53: "Bruine",
             55: "Bruine",
@@ -117,6 +125,8 @@ function weatherShortText(languageCode, code) {
             1: "Ясно",
             2: "Облачно",
             3: "Облачно",
+            45: "Туман",
+            48: "Туман",
             51: "Морось",
             53: "Морось",
             55: "Морось",
@@ -145,6 +155,8 @@ function weatherShortText(languageCode, code) {
             1: "晴朗",
             2: "多云",
             3: "多云",
+            45: "雾",
+            48: "雾",
             51: "小雨",
             53: "小雨",
             55: "小雨",
@@ -173,6 +185,8 @@ function weatherShortText(languageCode, code) {
             1: "Claro",
             2: "Nublado",
             3: "Nublado",
+            45: "Nevoeiro",
+            48: "Nevoeiro",
             51: "Garoa",
             53: "Garoa",
             55: "Garoa",
@@ -201,6 +215,8 @@ function weatherShortText(languageCode, code) {
             1: "صافي",
             2: "غائم",
             3: "غائم",
+            45: "ضباب",
+            48: "ضباب",
             51: "رذاذ",
             53: "رذاذ",
             55: "رذاذ",
@@ -229,6 +245,8 @@ function weatherShortText(languageCode, code) {
             1: "পরিষ্কার",
             2: "মেঘলা",
             3: "মেঘলা",
+            45: "কুয়াশা",
+            48: "কুয়াশা",
             51: "ঝিরঝিরি",
             53: "ঝিরঝিরি",
             55: "ঝিরঝিরি",
@@ -257,6 +275,8 @@ function weatherShortText(languageCode, code) {
             1: "Klar",
             2: "Bewölkt",
             3: "Bewölkt",
+            45: "Nebel",
+            48: "Nebel",
             51: "Niesel",
             53: "Niesel",
             55: "Niesel",
@@ -285,6 +305,8 @@ function weatherShortText(languageCode, code) {
             1: "晴れ",
             2: "曇り",
             3: "曇り",
+            45: "霧",
+            48: "霧",
             51: "霧雨",
             53: "霧雨",
             55: "霧雨",
@@ -313,6 +335,8 @@ function weatherShortText(languageCode, code) {
             1: "맑음",
             2: "흐림",
             3: "흐림",
+            45: "안개",
+            48: "안개",
             51: "이슬비",
             53: "이슬비",
             55: "이슬비",
@@ -341,6 +365,8 @@ function weatherShortText(languageCode, code) {
             1: "Sereno",
             2: "Nuvoloso",
             3: "Nuvoloso",
+            45: "Nebbia",
+            48: "Nebbia",
             51: "Pioggerella",
             53: "Pioggerella",
             55: "Pioggerella",
@@ -380,6 +406,8 @@ function weatherLongText(languageCode, code) {
             1: "Mainly clear",
             2: "Partly cloudy",
             3: "Overcast",
+            45: "Fog",
+            48: "Depositing rime fog",
             51: "Drizzle light intensity",
             53: "Drizzle moderate intensity",
             55: "Drizzle dense intensity",
@@ -408,6 +436,8 @@ function weatherLongText(languageCode, code) {
             1: "Mayormente despejado",
             2: "Parcialmente nublado",
             3: "Nublado",
+            45: "Niebla",
+            48: "Niebla de escarcha",
             51: "Llovizna de baja intensidad",
             53: "Llovizna de intensidad moderada",
             55: "Llovizna de intensidad densa",
@@ -436,6 +466,8 @@ function weatherLongText(languageCode, code) {
             1: "Partiellement clair",
             2: "Partiellement nuageux",
             3: "Couvert",
+            45: "Brouillard",
+            48: "Brouillard givrant",
             51: "Bruine légère",
             53: "Bruine modérée",
             55: "Bruine dense",
@@ -464,6 +496,8 @@ function weatherLongText(languageCode, code) {
             1: "Überwiegend klar",
             2: "Teilweise bewölkt",
             3: "Bedeckt",
+            45: "Nebel",
+            48: "Nebelfrost",
             51: "Leichter Nieselregen",
             53: "Mäßiger Nieselregen",
             55: "Dichter Nieselregen",
@@ -492,6 +526,8 @@ function weatherLongText(languageCode, code) {
             1: "Prevalentemente sereno",
             2: "Parzialmente nuvoloso",
             3: "Nuvoloso",
+            45: "Nebbia",
+            48: "Nebbia brinata",
             51: "Pioviggine debole",
             53: "Pioviggine moderata",
             55: "Pioviggine intensa",
@@ -520,6 +556,8 @@ function weatherLongText(languageCode, code) {
             1: "Céu pouco nublado",
             2: "Parcialmente nublado",
             3: "Céu nublado",
+            45: "Nevoeiro",
+            48: "Nevoeiro com depósito de gelo",
             51: "Chuviscos de fraca intensidade",
             53: "Chuviscos de intensidade moderada",
             55: "Chuviscos de intensidade forte",
@@ -548,6 +586,8 @@ function weatherLongText(languageCode, code) {
             1: "大部分晴れ",
             2: "一部曇り",
             3: "曇り",
+            45: "霧",
+            48: "着氷性の霧",
             51: "わずかな霧雨",
             53: "穏やかな霧雨",
             55: "濃い霧雨",
@@ -576,6 +616,8 @@ function weatherLongText(languageCode, code) {
             1: "В основном ясно",
             2: "Частично облачно",
             3: "Пасмурно",
+            45: "Туман",
+            48: "Осаждающийся инейный туман",
             51: "Морось слабая интенсивность",
             53: "Морось умеренная интенсивность",
             55: "Морось плотная интенсивность",
@@ -596,14 +638,16 @@ function weatherLongText(languageCode, code) {
             85: "Снег с прояснениями слабый",
             86: "Снег с прояснениями сильный",
             95: "Гроза",
-            96: "Гроза с небольшим градом",
-            99: "Гроза с сильным градом"
+            96: "Гроза with slight hail",
+            99: "Гроза with heavy hail"
         },
         zh: {
             0: "晴",
             1: "晴间多云",
             2: "局部多云",
             3: "阴天",
+            45: "雾",
+            48: "雾并伴有沉积霜",
             51: "小雨",
             53: "中雨",
             55: "大雨",
@@ -632,6 +676,8 @@ function weatherLongText(languageCode, code) {
             1: "구름 조금",
             2: "부분적으로 흐림",
             3: "흐림",
+            45: "안개",
+            48: "동결성 안개",
             51: "약한 이슬비",
             53: "중간 강도의 이슬비",
             55: "짙은 이슬비",
@@ -654,8 +700,7 @@ function weatherLongText(languageCode, code) {
             95: "천둥 번개",
             96: "약한 우박을 동반한 천둥 번개",
             99: "강한 우박을 동반한 천둥 번개"
-        },
-        // Agrega más idiomas aquí según sea necesario
+        }
     };
 
     if (descriptions[languageCode]) {
@@ -664,123 +709,44 @@ function weatherLongText(languageCode, code) {
         return descriptions["en"][code];
     }
 }
+
 function rainProbabilityText(languageCode) {
     const translations = {
-        es: "Probabilidad de lluvia",         // Spanish
-        "en": "Probability of rain",            // English
-        "hi": "बारिश की संभावना",            // Hindi
-        "fr": "Probabilité de pluie",             // French
-        "de": "Regenwahrscheinlichkeit",       // German
-        "it": "Probabilità di pioggia",          // Italian
-        "pt": "Probabilidade de chuva",   // Portuguese
-        "ru": "Вероятность дождя",               // Russian
-        "zh": "降雨概率",                // Chinese (Mandarin)
-        "ja": "降雨確率",         // Japanese
-        "ko": "비 올 확률",            // Korean
-        "nl": "Regenkans",          // Dutch
-        "ny": "Mwayi wamagulu"           // Chichewa
+        es: "Probabilidad de lluvia",
+        "en": "Probability of rain",
+        "hi": "बारिश की संभावना",
+        "fr": "Probabilité de pluie",
+        "de": "Regenwahrscheinlichkeit",
+        "it": "Probabilità di pioggia",
+        "pt": "Probabilidade de chuva",
+        "ru": "Вероятность дождя",
+        "zh": "降雨概率",
+        "ja": "降雨確率",
+        "ko": "비 올 확률",
+        "nl": "Regenkans",
+        "ny": "Mwayi wamagulu"
     };
 
-    // Return the translation for the language code or default to English if not found
     return translations[languageCode] || translations["en"];
 }
 
 function lavelUV(languageCode, lavel) {
     const translations = {
-        es: {
-            0: "Bajo",
-            1: "Moderado",
-            2: "Alto",
-            3: "Muy Alto",
-            4: "Extremo"
-        },
-        en: {
-            0: "Low",
-            1: "Moderate",
-            2: "High",
-            3: "Very High",
-            4: "Extreme"
-        },
-        hi: {
-            0: "कम",
-            1: "मध्यम",
-            2: "उच्च",
-            3: "बहुत उच्च",
-            4: "अत्यधिक"
-        },
-        fr: {
-            0: "Faible",
-            1: "Modéré",
-            2: "Élevé",
-            3: "Très Élevé",
-            4: "Extrême"
-        },
-        de: {
-            0: "Niedrig",
-            1: "Mäßig",
-            2: "Hoch",
-            3: "Sehr Hoch",
-            4: "Extrem"
-        },
-        it: {
-            0: "Basso",
-            1: "Moderato",
-            2: "Alto",
-            3: "Molto Alto",
-            4: "Estremo"
-        },
-        pt: {
-            0: "Baixo",
-            1: "Moderado",
-            2: "Alto",
-            3: "Muito Alto",
-            4: "Extremo"
-        },
-        ru: {
-            0: "Низкий",
-            1: "Умеренный",
-            2: "Высокий",
-            3: "Очень Высокий",
-            4: "Экстремальный"
-        },
-        zh: {
-            0: "低",
-            1: "中等",
-            2: "高",
-            3: "很高",
-            4: "极高"
-        },
-        ja: {
-            0: "低い",
-            1: "中程度",
-            2: "高い",
-            3: "非常に高い",
-            4: "極端"
-        },
-        ko: {
-            0: "낮음",
-            1: "보통",
-            2: "높음",
-            3: "매우 높음",
-            4: "극심함"
-        },
-        nl: {
-            0: "Laag",
-            1: "Matig",
-            2: "Hoog",
-            3: "Zeer Hoog",
-            4: "Extreem"
-        },
-        ny: {
-            0: "Zochepa",
-            1: "Apakatikati",
-            2: "Wapamwamba",
-            3: "Wapamwamba Kwambiri",
-            4: "Mowopsa"
-        }
+        es: { 0: "Bajo", 1: "Moderado", 2: "Alto", 3: "Muy Alto", 4: "Extremo" },
+        en: { 0: "Low", 1: "Moderate", 2: "High", 3: "Very High", 4: "Extreme" },
+        hi: { 0: "कम", 1: "मध्यम", 2: "उच्च", 3: "बहुत उच्च", 4: "अत्यधिक" },
+        fr: { 0: "Faible", 1: "Modéré", 2: "Élevé", 3: "Très Élevé", 4: "Extrême" },
+        de: { 0: "Niedrig", 1: "Mäßig", 2: "Hoch", 3: "Sehr Hoch", 4: "Extrem" },
+        it: { 0: "Basso", 1: "Moderato", 2: "Alto", 3: "Molto Alto", 4: "Estremo" },
+        pt: { 0: "Baixo", 1: "Moderado", 2: "Alto", 3: "Muito Alto", 4: "Extremo" },
+        ru: { 0: "Низкий", 1: "Умеренный", 2: "Высокий", 3: "Очень Высокий", 4: "Экстремальный" },
+        zh: { 0: "低", 1: "中等", 2: "高", 3: "很高", 4: "极高" },
+        ja: { 0: "低い", 1: "中程度", 2: "高い", 3: "非常に高い", 4: "極端" },
+        ko: { 0: "낮음", 1: "보통", 2: "높음", 3: "매우 높음", 4: "극심함" },
+        nl: { 0: "Laag", 1: "Matig", 2: "Hoog", 3: "Zeer Hoog", 4: "Extreem" },
+        ny: { 0: "Zochepa", 1: "Apakatikati", 2: "Wapamwamba", 3: "Wapamwamba Kwambiri", 4: "Mowopsa" }
     };
 
-    // Return the translation for the language code or default to English if not found
     if (translations[languageCode]) {
         return translations[languageCode][lavel] || "Unknown";
     } else {
@@ -799,7 +765,7 @@ function windSpeedText(languageCode) {
         "pt": "Velocidade do vento",
         "ru": "Скорость ветра",
         "zh": "风速",
-        "ja": "風速",
+        "ja": "风速",
         "ko": "풍속",
         "nl": "Windsnelheid",
         "ny": "Zachitentha"
@@ -815,16 +781,14 @@ function windSpeedText(languageCode) {
         "pt": "Vento",
         "ru": "Ветер",
         "zh": "风",
-        "ja": "風",
+        "ja": "风",
         "ko": "바람",
         "nl": "Wind",
         "ny": "Mphepo"
     };
 
-    // Get the full translation or default to English if not found
     const fullTranslation = translations[languageCode] || translations["en"];
 
-    // Return the short translation if the full one is longer than 15 characters
     if (fullTranslation.length > 15) {
         return shortTranslations[languageCode] || shortTranslations["en"];
     }
@@ -849,6 +813,5 @@ function uvRadiationText(languageCode) {
         "ny": "UV"
     };
 
-    // Return the translation for the language code or default to "UV" if not found
     return translations[languageCode] || "UV";
 }
