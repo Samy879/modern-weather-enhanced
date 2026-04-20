@@ -13,7 +13,7 @@
         "Name": "Modern Weather Enhanced",
         "Id": "com.github.samy879.modernweather",
         "Description": "A modern, minimalist weather widget for KDE Plasma 6. Features a clean UI, customizable refresh rates, font weights, and advanced display options.",
-        "Category": "Weather",
+        "Category": "Environment and Weather",
         "Keywords": "Weather;Météo;Forecast;Modern;Minimalist;",
         "Icon": "weather-clouds",
         "EnabledByDefault": true,
@@ -21,7 +21,7 @@
         "ServiceTypes": [
             "Plasma/Applet"
         ],
-        "Version": "1.1",
+        "Version": "1.0.3",
         "Website": "https://github.com/samy879/modern-weather-enhanced"
     },
     "X-Plasma-API-Minimum-Version": "6.0",
