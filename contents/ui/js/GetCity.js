@@ -5,12 +5,13 @@ function getNameCity(latitude, longitud, leng, callback) {
             url += `&accept-language=${leng}`;
         }
 
-        console.log("Generated URL: ", url);
-
         let req = new XMLHttpRequest();
         req.open("GET", url, true);
 
-        // AJOUT : Nominatim exige un User-Agent pour éviter le blocage 403
+        // Timeout de 5 secondes
+        req.timeout = 5000;
+
+        // Nominatim exige un User-Agent pour éviter le blocage 403
         req.setRequestHeader("User-Agent", "ChaacWeatherPlasmoid/1.0");
 
         req.onreadystatechange = function () {
@@ -24,21 +25,25 @@ function getNameCity(latitude, longitud, leng, callback) {
                         let state = address.state;
                         let full = city ? city : state ? state : county;
 
-                        console.log("Parsed location:", full);
-
                         if (full === "Language not supported" && useLanguage) {
                             fetchCity(false);
                         } else {
                             callback(full || "Unknown");
                         }
                     } catch (e) {
-                        console.error("Error al analizar la respuesta JSON: ", e);
+                        console.error("Error JSON City: ", e);
+                        callback("Unknown");
                     }
                 } else {
                     console.error("city failed, status: " + req.status);
+                    callback("Unknown");
                 }
             }
         };
+
+        req.onerror = function() { callback("Unknown"); };
+        req.ontimeout = function() { callback("Unknown"); };
+
         req.send();
     }
     fetchCity(true);

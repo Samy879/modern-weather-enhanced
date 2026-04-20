@@ -129,3 +129,12 @@ msgstr "Nem"
 
 msgid "UV"
 msgstr "UV"
+
+msgid "Enable weather animations:"
+msgstr "Hava durumu animasyonlarını etkinleştir:"
+
+msgid "Refresh Weather Data"
+msgstr "Hava Durumu Verilerini Yenile"
+
+msgid "Manual Actions:"
+msgstr "Manuel İşlemler:"

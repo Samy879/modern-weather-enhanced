@@ -128,3 +128,12 @@ msgstr "Vocht"
 
 msgid "UV"
 msgstr "UV"
+
+msgid "Enable weather animations:"
+msgstr "Weeranimaties inschakelen:"
+
+msgid "Refresh Weather Data"
+msgstr "Weergegevens vernieuwen"
+
+msgid "Manual Actions:"
+msgstr "Handmatige acties:"

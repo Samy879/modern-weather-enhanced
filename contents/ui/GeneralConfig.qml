@@ -7,6 +7,8 @@ Kirigami.ScrollablePage {
     id: configRoot
     title: i18n("General")
 
+    // --- ALIAS DE CONFIGURATION ---
+    property alias cfg_showAnimations: showAnimationsCheck.checked
     property alias cfg_showConditionFull: conditionFullCheck.checked
     property alias cfg_useCoordinatesIp: autoCoorde.checked
     property alias cfg_latitudeC: latitudeField.text
@@ -27,6 +29,11 @@ Kirigami.ScrollablePage {
     property alias cfg_showUVIndex: uvCheck.checked
     property alias cfg_showWind: windCheck.checked
 
+    // Alias obligatoire pour le déclencheur de rafraîchissement
+    property alias cfg_refreshTrigger: refreshTriggerHidden.value
+
+    // --- VALEURS PAR DÉFAUT ---
+    readonly property bool cfg_showAnimationsDefault: true
     readonly property bool cfg_showConditionFullDefault: true
     readonly property bool cfg_useCoordinatesIpDefault: true
     readonly property string cfg_latitudeCDefault: "0"
@@ -39,13 +46,20 @@ Kirigami.ScrollablePage {
     readonly property bool cfg_textweatherDefault: true
     readonly property bool cfg_preciseTempDefault: false
     readonly property int cfg_updateIntervalDefault: 15
-    readonly property int cfg_forecastStartDayDefault: 1
+    readonly property int cfg_forecastStartDayDefault: 0
     readonly property bool cfg_boldTempPanelDefault: false
     readonly property bool cfg_boldCondPanelDefault: false
     readonly property bool cfg_showApparentTempDefault: true
     readonly property bool cfg_showHumidityDefault: true
     readonly property bool cfg_showUVIndexDefault: true
     readonly property bool cfg_showWindDefault: true
+    readonly property int cfg_refreshTriggerDefault: 0
+
+    // Composant invisible servant de pont pour synchroniser la config
+    SpinBox {
+        id: refreshTriggerHidden
+        visible: false
+    }
 
     Kirigami.FormLayout {
         // --- LOCALISATION ---
@@ -66,6 +80,14 @@ Kirigami.ScrollablePage {
 
         Kirigami.Separator { }
 
+        // --- ANIMATIONS ---
+        CheckBox {
+            id: showAnimationsCheck
+            Kirigami.FormData.label: i18n("Enable weather animations:")
+        }
+
+        Kirigami.Separator { }
+
         // --- SYSTÈME & UNITÉS ---
         ComboBox {
             id: temperatureCombo
@@ -81,26 +103,11 @@ Kirigami.ScrollablePage {
         Kirigami.Separator { }
 
         // --- CONFIGURATION DU PANEL ---
-        CheckBox {
-            id: textWeatherCheck
-            Kirigami.FormData.label: i18n("Show temperature:")
-        }
-        CheckBox {
-            id: conditionOnPanelCheck
-            Kirigami.FormData.label: i18n("Show condition text (panel):")
-        }
-        CheckBox {
-            id: conditionFullCheck
-            Kirigami.FormData.label: i18n("Show condition text (Full view):")
-        }
-        CheckBox {
-            id: preciseTempCheck
-            Kirigami.FormData.label: i18n("Show decimals (only panel):")
-        }
-        CheckBox {
-            id: reverseCheck
-            Kirigami.FormData.label: i18n("Reverse Temp/Condition order:")
-        }
+        CheckBox { id: textWeatherCheck; Kirigami.FormData.label: i18n("Show temperature:") }
+        CheckBox { id: conditionOnPanelCheck; Kirigami.FormData.label: i18n("Show condition text (panel):") }
+        CheckBox { id: conditionFullCheck; Kirigami.FormData.label: i18n("Show condition text (Full view):") }
+        CheckBox { id: preciseTempCheck; Kirigami.FormData.label: i18n("Show decimals (only panel):") }
+        CheckBox { id: reverseCheck; Kirigami.FormData.label: i18n("Reverse Temp/Condition order:") }
 
         Kirigami.Separator { }
 
@@ -116,10 +123,7 @@ Kirigami.ScrollablePage {
             textFromValue: (value, locale) => Number(value / 10).toLocaleString(locale, 'f', 1)
             valueFromText: (text, locale) => Math.round(Number.fromLocaleString(locale, text) * 10)
         }
-        CheckBox {
-            id: boldTempCheck
-            Kirigami.FormData.label: i18n("Bold temperature:")
-        }
+        CheckBox { id: boldTempCheck; Kirigami.FormData.label: i18n("Bold temperature:") }
 
         SpinBox {
             id: fontSizeCondSpin
@@ -132,10 +136,7 @@ Kirigami.ScrollablePage {
             textFromValue: (value, locale) => Number(value / 10).toLocaleString(locale, 'f', 1)
             valueFromText: (text, locale) => Math.round(Number.fromLocaleString(locale, text) * 10)
         }
-        CheckBox {
-            id: boldCondCheck
-            Kirigami.FormData.label: i18n("Bold condition text:")
-        }
+        CheckBox { id: boldCondCheck; Kirigami.FormData.label: i18n("Bold condition text:") }
 
         Kirigami.Separator { }
 
@@ -153,6 +154,19 @@ Kirigami.ScrollablePage {
             id: startDaySpin
             Kirigami.FormData.label: i18n("Forecast start day offset:")
             from: 0; to: 4; stepSize: 1
+        }
+
+        Kirigami.Separator { }
+
+        // --- ACTION MANUELLE ---
+        Button {
+            id: manualRefreshButton
+            Kirigami.FormData.label: i18n("Manual Actions:")
+            text: i18n("Refresh Weather Data")
+            icon.name: "view-refresh"
+            // On incrémente via le SpinBox lié à l'alias cfg_
+            onClicked: refreshTriggerHidden.value++
+            Layout.fillWidth: true
         }
     }
 }

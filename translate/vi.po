@@ -129,3 +129,12 @@ msgstr "Độ ẩm"
 
 msgid "UV"
 msgstr "UV"
+
+msgid "Enable weather animations:"
+msgstr "Bật hiệu ứng thời tiết:"
+
+msgid "Refresh Weather Data"
+msgstr "Cập nhật dữ liệu thời tiết"
+
+msgid "Manual Actions:"
+msgstr "Thao tác thủ công:"

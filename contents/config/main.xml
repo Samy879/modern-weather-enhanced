@@ -18,8 +18,7 @@
     <entry name="showConditionOnPanel" type="bool">
       <default>true</default>
     </entry>
-    <entry name="showConditionFull" type="Bool">
-      <default>true</default>
+    <entry name="showConditionFull" type="bool"> <default>true</default>
     </entry>
     <entry name="reverseOrder" type="bool">
       <default>false</default>
@@ -43,8 +42,7 @@
       <default>15</default>
     </entry>
     <entry name="forecastStartDay" type="int">
-      <default>0</default>
-    </entry>
+      <default>0</default> </entry>
     <entry name="boldTempPanel" type="bool">
       <default>true</default>
     </entry>
@@ -62,6 +60,12 @@
     </entry>
     <entry name="showWind" type="bool">
       <default>true</default>
+    </entry>
+    <entry name="showAnimations" type="bool">
+      <default>true</default>
+    </entry>
+    <entry name="refreshTrigger" type="int">
+      <default>0</default>
     </entry>
   </group>
 </kcfg>

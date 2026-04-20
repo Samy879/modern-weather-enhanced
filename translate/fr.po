@@ -135,3 +135,12 @@ msgstr "Hum."
 
 msgid "UV"
 msgstr "UV"
+
+msgid "Enable weather animations:"
+msgstr "Activer les animations météo :"
+
+msgid "Refresh Weather Data"
+msgstr "Actualiser les données météo"
+
+msgid "Manual Actions:"
+msgstr "Actions manuelles :"

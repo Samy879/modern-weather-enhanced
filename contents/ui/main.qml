@@ -15,6 +15,7 @@ PlasmoidItem {
   }
 
   // Propriétés de configuration (Lien avec main.xml)
+  property bool showAnimations: Plasmoid.configuration.showAnimations
   property bool boldTempPanel: Plasmoid.configuration.boldTempPanel
   property bool boldCondPanel: Plasmoid.configuration.boldCondPanel
   property bool reverseOrder: Plasmoid.configuration.reverseOrder

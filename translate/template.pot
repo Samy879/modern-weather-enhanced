@@ -135,3 +135,12 @@ msgstr ""
 
 msgid "UV"
 msgstr ""
+
+msgid "Enable weather animations:"
+msgstr ""
+
+msgid "Refresh Weather Data"
+msgstr ""
+
+msgid "Manual Actions:"
+msgstr ""

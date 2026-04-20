@@ -129,3 +129,12 @@ msgstr "湿度"
 
 msgid "UV"
 msgstr "UV指数"
+
+msgid "Enable weather animations:"
+msgstr "启用天气动画:"
+
+msgid "Refresh Weather Data"
+msgstr "刷新天气数据"
+
+msgid "Manual Actions:"
+msgstr "手动操作:"
