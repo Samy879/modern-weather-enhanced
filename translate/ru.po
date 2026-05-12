@@ -1,0 +1,151 @@
+# Translation of Modern Weather Enhanced in Russian
+# Copyright (C) 2026
+# This file is distributed under the same license as the Modern Weather Enhanced package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Modern Weather Enhanced\n"
+"Report-Msgid-Bugs-To: https://github.com/samy879/modern-weather-enhanced/issues\n"
+"POT-Creation-Date: 2026-05-12 00:00+0300\n"
+"PO-Revision-Date: 2026-05-12 00:00+0300\n"
+"Last-Translator: Kotoko\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Modern Weather Enhanced"
+msgstr "Modern Weather Enhanced"
+
+msgid "Minimalist weather widget with advanced customization options."
+msgstr "Минималистичный виджет погоды с расширенными настройками."
+
+msgid "Weather;Météo;Forecast;"
+msgstr "Погода;Прогноз;"
+
+msgid "Clear"
+msgstr "Ясно"
+
+msgid "Cloudy"
+msgstr "Облачно"
+
+msgid "Drizzle"
+msgstr "Морось"
+
+msgid "Rain"
+msgstr "Дождь"
+
+msgid "Snow"
+msgstr "Снег"
+
+msgid "Hail"
+msgstr "Град"
+
+msgid "Showers"
+msgstr "Ливни"
+
+msgid "Storm"
+msgstr "Гроза"
+
+msgid "General"
+msgstr "Общие"
+
+msgid "Automatic Location (IP):"
+msgstr "Автоматическое местоположение (IP):"
+
+msgid "Latitude:"
+msgstr "Широта:"
+
+msgid "Longitude:"
+msgstr "Долгота:"
+
+msgid "Enable weather animations:"
+msgstr "Включить анимации погоды:"
+
+msgid "Temperature Unit:"
+msgstr "Единицы температуры:"
+
+msgid "Celsius (°C)"
+msgstr "Цельсий (°C)"
+
+msgid "Fahrenheit (°F)"
+msgstr "Фаренгейт (°F)"
+
+msgid "Update Interval (min):"
+msgstr "Интервал обновления (мин):"
+
+msgid "Show temperature:"
+msgstr "Показывать температуру:"
+
+msgid "Show condition text:"
+msgstr "Показывать описание погоды:"
+
+msgid "Show condition text (panel):"
+msgstr "Показывать описание погоды (панель):"
+
+msgid "Show condition text (Full view):"
+msgstr "Показывать описание погоды (полный вид):"
+
+msgid "Show decimals (only panel):"
+msgstr "Показывать десятые доли (только панель):"
+
+msgid "Reverse Temp/Condition order:"
+msgstr "Обратный порядок температуры и описания:"
+
+msgid "Temperature font size:"
+msgstr "Размер шрифта температуры:"
+
+msgid "Bold temperature:"
+msgstr "Температура жирным:"
+
+msgid "Condition font size:"
+msgstr "Размер шрифта описания:"
+
+msgid "Bold condition text:"
+msgstr "Описание погоды жирным:"
+
+msgid "Details to show:"
+msgstr "Показывать детали:"
+
+msgid "Apparent Temperature"
+msgstr "Ощущается как"
+
+msgid "Apparent Temp"
+msgstr "Ощущается"
+
+msgid "Humidity"
+msgstr "Влажность"
+
+msgid "UV Index"
+msgstr "УФ-индекс"
+
+msgid "Wind Speed"
+msgstr "Скорость ветра"
+
+msgid "Wind"
+msgstr "Ветер"
+
+msgid "Forecast start day offset:"
+msgstr "Смещение начала прогноза:"
+
+msgid "Manual Actions:"
+msgstr "Ручные действия:"
+
+msgid "Refresh Weather Data"
+msgstr "Обновить данные погоды"
+
+msgctxt "@action:button set keyboard shortcut for"
+msgid "Activate widget as if clicked:"
+msgstr "Активировать виджет как по щелчку:"
+
+msgid "Activate widget as if clicked:"
+msgstr "Активировать виджет как по щелчку:"
+
+msgid "Feels"
+msgstr "Ощущ."
+
+msgid "Hum"
+msgstr "Влажн."
+
+msgid "UV"
+msgstr "УФ"
